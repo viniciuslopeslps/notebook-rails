@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  email: 
+  kind_id: 
+  rmk: MyText
+
+two:
+  name: 
+  email: 
+  kind_id: 
+  rmk: MyText

@@ -1,0 +1,15 @@
+<div class="basic-grey">
+    <h1>Seja bem vindo!</h1>
+    <!--<p>Find me in app/views/home/index.html.erb</p>-->
+    <% a= 3+4 %>
+    <%= a %>
+    <ul>
+        <li><%= link_to "Tipos", kinds_path %></li>
+        <li><%= link_to "Endereço", addresses_path %></li>
+        <li><%= link_to "Contatos", contacts_path %></li>
+        <li><%= link_to "Telefones", phones_path %></li>
+        <!-- é preciso o remote: true para ativar o ajax -->
+        <li><%= link_to "Telefones", phones_path, remote: true %></li>
+    </ul>
+</div>
+<%= render partial: "/home/shared/dev" %>

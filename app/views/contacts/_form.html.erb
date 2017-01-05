@@ -1,0 +1,61 @@
+<%= form_for(@contact, html:{ class: "basic-grey"}) do |f| %>
+  <h1>Contacts</h1>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+     <%= f.label "Tipo" %>
+     <!-- Usando o Helper de caixa de seleção, o primeiro é o objeto atual, o segundo é o o campo que ele vai ser inserido -->
+     <!-- o terceiro é uma lista com todos as opções possíveis para, o quarto é o que vai ser usado no terceiro e o último é o que vai ser exibido -->
+     <%=collection_select(:contact, :kind_id, @kinds_to_select, :id, :description) %>
+  </div>
+  <!-- Usando o Helper fields for (Conectado com o Modelo), usado para Fazer um "Formulário dentro do outro"-->
+  <%= f.fields_for :address do |address_field| %>
+      <div class="field">
+        <%= address_field.label :street %>
+        <%= address_field.text_field :street %>
+      </div>
+      <div class="field">
+        <%= address_field.label :city %>
+        <%= address_field.text_field :city %>
+      </div>
+      <div class="field">
+        <%= address_field.label :state %>
+        <%= address_field.select(:state, options_for_state(@contact.address.state)) %>
+      </div>
+  <% end %>
+  <!-- Para usar o cocoon é preciso uma div envolvendo todo o código que vai ser usado para achar com o jquery-->
+  <div id="phones">
+    <!-- botao de adicionar mais 1 -->
+    <%= f.fields_for :phones do |phone_fields| %>
+      <!--Renderiza a partial, tem que seguir padrão com _model_fields.html.erb e estou passando a variável phone_fields como f para a parcial-->
+      <%= render partial: "phone_fields", locals: { f: phone_fields } %>
+    <% end %>
+    <%= link_to_add_association(['Adicionar Telefone'], f, :phones) %>
+  </div>
+  <div class="field">
+    <%= f.label :rmk %><br>
+    <%= f.text_area :rmk %>
+  </div>
+  <div class="actions">
+    <%= f.submit t("buttons.send"), class: "button" %>
+    <%= link_to t('buttons.back'), contacts_path, class: "button" %>
+  </div>
+    <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") << ":" << t('messages.errors') %></h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
