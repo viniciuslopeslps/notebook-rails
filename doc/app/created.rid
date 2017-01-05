@@ -1,0 +1,18 @@
+Thu, 05 Jan 2017 22:10:50 +0000
+README.rdoc	Mon, 11 Jul 2016 01:11:35 +0000
+app/controllers/addresses_controller.rb	Tue, 26 Jul 2016 01:05:13 +0000
+app/controllers/application_controller.rb	Mon, 11 Jul 2016 01:11:35 +0000
+app/controllers/contacts_controller.rb	Thu, 05 Jan 2017 21:50:12 +0000
+app/controllers/home_controller.rb	Tue, 19 Jul 2016 00:07:16 +0000
+app/controllers/kinds_controller.rb	Tue, 12 Jul 2016 22:25:32 +0000
+app/controllers/phones_controller.rb	Mon, 02 Jan 2017 23:57:00 +0000
+app/helpers/addresses_helper.rb	Tue, 12 Jul 2016 22:30:44 +0000
+app/helpers/application_helper.rb	Wed, 21 Dec 2016 22:47:13 +0000
+app/helpers/contacts_helper.rb	Tue, 12 Jul 2016 22:28:49 +0000
+app/helpers/home_helper.rb	Wed, 20 Jul 2016 22:03:02 +0000
+app/helpers/kinds_helper.rb	Tue, 12 Jul 2016 22:25:32 +0000
+app/helpers/phones_helper.rb	Tue, 12 Jul 2016 22:31:41 +0000
+app/models/address.rb	Sun, 18 Dec 2016 15:45:24 +0000
+app/models/contact.rb	Thu, 29 Dec 2016 00:12:40 +0000
+app/models/kind.rb	Sun, 25 Dec 2016 19:22:47 +0000
+app/models/phone.rb	Sun, 18 Dec 2016 16:00:07 +0000
